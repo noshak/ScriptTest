@@ -9,11 +9,12 @@ public class Boss
     //magic用の関数
     public void magic()
     {
-        this.mp -= 5;
-
-        if(this.mp > 0)
+        if(this.mp >= 5)
         {
-            //mpが0より大きい場合
+            //mpが5以上の場合
+
+            this.mp -= 5;
+
             Debug.Log("魔法攻撃をした。残りMPは" + this.mp);
         }
 
@@ -34,7 +35,7 @@ public class BossClass : MonoBehaviour
         Boss lastboss = new Boss();
 
         //magic関数を10回行う
-        for (int i =53; i > 0; i -= 5)
+        for (int i = 53; i > 0; i -= 5)
         {
             
             //magic関数を呼び出す
