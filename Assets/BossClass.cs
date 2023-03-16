@@ -7,13 +7,13 @@ public class Boss
     private int mp = 53; //int型の変数mpを宣言し、53で初期化
 
     //magic用の関数
-    public void magic()
+    public void Magic(int c)
     {
-        if(this.mp >= 5)
+        if(this.mp >= c)
         {
             //mpが5以上の場合
 
-            this.mp -= 5;
+            this.mp -= c;
 
             Debug.Log("魔法攻撃をした。残りMPは" + this.mp);
         }
@@ -34,12 +34,12 @@ public class BossClass : MonoBehaviour
         // Bossクラスの変数を宣言してインスタンスを代入
         Boss lastboss = new Boss();
 
-        //magic関数を10回行う
-        for (int i = 53; i > 0; i -= 5)
+        //magic関数を11回行う
+        for (int i = 0; i < 11; i ++)
         {
             
             //magic関数を呼び出す
-            lastboss.magic();
+            lastboss.Magic(10);
         }
 
        
